@@ -1,0 +1,75 @@
+{
+  "protocol_version": "random_history_new_v1",
+  "data_root": "../data",
+  "seeds": [
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026,
+    2027,
+    2028,
+    2029,
+    2030
+  ],
+  "models": [
+    "TranAD",
+    "TimesNet",
+    "DTAAD",
+    "AnomalyTransformer",
+    "PatchTST"
+  ],
+  "training": {
+    "seq_len": 30,
+    "batch_size": 64,
+    "epochs": 3,
+    "learning_rate": 0.001,
+    "rank": 8,
+    "alpha": 1.0,
+    "dimension_seed": 2025,
+    "graph_sample_points": 2048,
+    "graph_threshold": 0.5,
+    "pretrain_ratio": 0.8,
+    "target_ratio": [
+      0.6,
+      1.0
+    ]
+  },
+  "datasets": {
+    "ADCS": {
+      "dimensions": 55,
+      "csv_header": "infer"
+    },
+    "MSL": {
+      "dimensions": 55,
+      "csv_header": "infer",
+      "exclude": [
+        "MSL.csv"
+      ]
+    },
+    "SMAP": {
+      "dimensions": 25,
+      "csv_header": "infer",
+      "exclude": [
+        "SMAP.csv"
+      ]
+    },
+    "ESA-M1": {
+      "dimensions": 76,
+      "csv_header": null,
+      "manifest": "esa/ESA-M1.json"
+    },
+    "ESA-M2": {
+      "dimensions": 129,
+      "csv_header": null,
+      "manifest": "esa/ESA-M2.json"
+    },
+    "ESA-M3": {
+      "dimensions": 135,
+      "csv_header": null,
+      "manifest": "esa/ESA-M3.json"
+    }
+  },
+  "split_seed": 2025
+}
